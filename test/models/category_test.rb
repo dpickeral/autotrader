@@ -1,17 +1,17 @@
 # == Schema Information
 #
-# Table name: makes
+# Table name: categories
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  logo       :string
+#  make_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 require 'test_helper'
 
-class MakeTest < ActiveSupport::TestCase
+class CategoryTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
