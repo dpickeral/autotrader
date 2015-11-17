@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<p>
+    <%= @vehicle.user.email if @vehicle.user.present? %>
+</p>
 <p>
   <strong>Category:</strong>
   <%= @vehicle.category.make.name %>

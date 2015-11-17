@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Vehicles</h1>
-
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Category</th>
@@ -16,13 +15,15 @@
   <tbody>
     <% @vehicles.each do |vehicle| %>
       <tr>
-        <td><%= vehicle.category_id %></td>
+        <td><%= vehicle.category.name %></td>
         <td><%= vehicle.color %></td>
         <td><%= vehicle.condition %></td>
-        <td><%= vehicle.price %></td>
-        <td><%= link_to 'Show', vehicle %></td>
-        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
-        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= number_to_currency(vehicle.price) %></td>
+        <td class="text-right">
+          <td><%= link_to 'Show', vehicle %></td>
+          <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+          <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Vehicle', new_vehicle_path %>
+<%= link_to 'New Vehicle', new_vehicle_path, class: "btn btn-primary" %>
